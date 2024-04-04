@@ -1,4 +1,4 @@
-    #PRIMEIRA ETAPA DA CRIAÇÃO DO CÓDIGO
+ #PRIMEIRA ETAPA DA CRIAÇÃO DO CÓDIGO
 def validar_email(email):
     if '@' not in email or '.' not in email:
         return False
