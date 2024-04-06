@@ -101,7 +101,7 @@ def hash_senha(senha_ord, num_primo):
     return int(senha_ord) % num_primo
 
 def menu():
-    while True:  # Loop infinito para manter o menu ativo
+    while True: 
         print("\nMenu:")
         print("1. Cadastrar novo usuário")
         print("2. Encontrar maior número primo até N")
@@ -110,17 +110,15 @@ def menu():
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
-            # Cadastro de novo usuário
             novo_login, nova_senha = cadastrar_usuario()
             if novo_login is not None and nova_senha is not None:
                 print("\nUsuário cadastrado com sucesso! Você pode continuar a usar o programa.")
-                num_primo = maior_primo_ate_N(100)  # Utiliza um número primo como chave criptográfica
+                num_primo = maior_primo_ate_N(100)  
                 senha_ord = ''.join(str(ord(c)) for c in nova_senha)
                 hash_senha_resultado = hash_senha(senha_ord, num_primo)
                 print(f"A senha foi criptografada com sucesso. Hash da senha: {hash_senha_resultado}")
 
         elif opcao == "2":
-            # Autenticação do usuário
             login, senha = autenticar_usuario()
             if login is not None and senha is not None:
                 N = int(input("Digite o valor de N (deve ser maior ou igual a 2): "))
@@ -134,10 +132,10 @@ def menu():
 
         elif opcao == "3":
             print("Encerrando...")
-            break  # Encerra o loop e sai do programa
+            break  
 
         else:
             print("Opção inválida. Tente novamente.")
 
-# Iniciando o menu
+
 menu()
